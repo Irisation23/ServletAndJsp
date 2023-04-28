@@ -3,4 +3,30 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
   version="4.0">
+
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+
+  <servlet>
+    <servlet-name>Action</servlet-name>
+    <servlet-class>com.example.servlet.ActionServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>Action</servlet-name>
+    <url-pattern>/hi</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>Blue</servlet-name>
+    <servlet-class>com.example.servlet.BlueServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>Blue</servlet-name>
+    <url-pattern>/blue</url-pattern>
+  </servlet-mapping>
+
 </web-app>
