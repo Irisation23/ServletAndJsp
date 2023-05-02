@@ -25,7 +25,7 @@ public class DispatcherServlet extends HttpServlet {
             return;
         }
 
-        System.out.println("포워드에 입장한 cmd: " + req.getParameter(cmd));
+        System.out.println("포워드에 입장한 fd.getPath(): " + fc.getPath());
         RequestDispatcher rd = req.getRequestDispatcher(fc.getPath());
         rd.forward(req, resp);
 

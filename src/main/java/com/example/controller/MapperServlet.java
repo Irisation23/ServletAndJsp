@@ -13,6 +13,10 @@ public class MapperServlet {
             processController = new ListController("/view/jspmvc2/list.jsp", false);
         }
 
+        if (cmd.equals("model2-login")) {
+            processController = new ListController("/model2/list.jsp", false);
+        }
+
         return processController;
     }
 
