@@ -1,7 +1,5 @@
 <%@ page import="com.example.dao.EmpDao" %>
-<%@ page import="com.example.model.EmpBean" %>
 <%@ page import="java.util.List" %>
-<%@ page import="java.util.Enumeration" %>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 		 pageEncoding="EUC-KR"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -15,11 +13,18 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 	<%
 		List<EmpDao> empList = (List<EmpDao>) request.getAttribute("empList");
-		String id = "";
+		String cookieValue = (String) request.getAttribute("cookieValue");
+
 		Cookie[] cookies = request.getCookies();
+
+		String name = "";
 		for (Cookie cookie : cookies) {
-			id = cookie.getValue();
+			if (cookie.getName().equals("id")) {
+				name = cookie.getName();
+			}
 		}
+
+		System.out.println(name);
 
 	%>
 </head>
@@ -31,7 +36,7 @@
 						<div class="loginWrap">
 							<span class="fir">2022.05.17</span>
 							<span>13:30:22</span>
-							<span><em><%= id %></em> 좋은 하루 되세요</span>
+							<span><em><%= cookieValue %></em> 좋은 하루 되세요</span>
 							<a href="" class="btnLogout"><img src="../model2/img/common/btn_logout.gif" alt="로그아웃" /></a>
 						</div>
 					</div>

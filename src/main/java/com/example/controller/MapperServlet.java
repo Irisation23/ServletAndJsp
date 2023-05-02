@@ -14,7 +14,12 @@ public class MapperServlet {
         }
 
         if (cmd.equals("model2-login")) {
-            processController = new ListController("/model2/list.jsp", false);
+            processController = new Model2LoginController("", false);
+        }
+
+        if (cmd.equals("model2-list")) {
+            System.out.println("입장");
+            processController = new Model2ListController("/model2/list.jsp", false);
         }
 
         return processController;

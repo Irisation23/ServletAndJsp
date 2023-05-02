@@ -14,6 +14,7 @@ public class DispatcherServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String cmd = req.getParameter("cmd");
+
         ProcessController pc = MapperServlet.getMapper(cmd);
         ForwardController fc = pc.execute(req, resp);
 
