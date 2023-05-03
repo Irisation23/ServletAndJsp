@@ -10,7 +10,7 @@ public class Model2LoginController implements ProcessController {
     private String path;
     private boolean redirect;
 
-    private LoginModel loginModel = new LoginModel();
+    private final LoginModel loginModel = new LoginModel();
 
     public Model2LoginController(String path, boolean redirect) {
         this.path = path;
@@ -23,7 +23,7 @@ public class Model2LoginController implements ProcessController {
         String id = req.getParameter("id");
         String pwd = req.getParameter("pwd");
 
-        if (loginModel.hasIdCookie(req.getCookies()) && loginModel.isAdmin(id, pwd)) {
+        if (loginModel.hasIdCookie(req.getCookies()) || loginModel.isAdmin(id, pwd)) {
             Cookie cookie = new Cookie("id", id);
             cookie.setPath("/");
             cookie.setMaxAge(30);
