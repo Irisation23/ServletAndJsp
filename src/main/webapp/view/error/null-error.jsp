@@ -5,12 +5,12 @@
     <title>Title</title>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script>
-        $(function () {
-          
-        });
+      $(function () {
+
+      });
     </script>
 </head>
 <body>
-
+<h1>null pointer</h1>
 </body>
 </html>

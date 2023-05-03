@@ -29,4 +29,14 @@
     <url-pattern>/blue</url-pattern>
   </servlet-mapping>
 
+  <error-page>
+    <error-code>404</error-code>
+    <location>/view/error/404-error.jsp</location>
+  </error-page>
+
+  <error-page>
+    <error-code>500</error-code>
+    <location>/view/error/500-error.jsp</location>
+  </error-page>
+
 </web-app>
